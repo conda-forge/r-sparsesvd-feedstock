@@ -1,5 +1,4 @@
-{% set version = '0.1-4' %}
-
+{% set version = '0.2' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -8,22 +7,21 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: sparsesvd_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/sparsesvd_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/sparsesvd/sparsesvd_{{ version }}.tar.gz
-  sha256: 55e92cb1654a345cc3209691268fc52d893d14660e9e5c4cb36d7351ca38c3f9
+  sha256: 1a1f54d6b0dca6ae83e3f729a1895c91c58bfe55427dacc50ddb0d2c5d32a9f6
 
 build:
   merge_build_host: True  # [win]
-  number: 1001
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - {{ compiler('c') }}        # [not win]
+    - {{ compiler('c') }}              # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
     - {{posix}}filesystem        # [win]
     - {{posix}}make
@@ -50,8 +48,28 @@ about:
     of a sparse matrix. Currently, only sparse real matrices in Matrix package format
     are supported.
   license_family: BSD
-  license_file: LICENSE
+  license_file:
+    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/BSD_3_clause'
+    - LICENSE
 
 extra:
   recipe-maintainers:
     - conda-forge/r
+
+# Package: sparsesvd
+# Title: Sparse Truncated Singular Value Decomposition (from 'SVDLIBC')
+# Version: 0.2
+# Date: 2019-07-15
+# Authors@R: c(person("Doug", "Rohde", email="dr+svd@tedlab.mit.edu", role="aut"), person("Michael", "Berry", role="aut"), person("Theresa", "Do", role="aut"), person("Gavin", "O'Brien", role="aut"), person("Vijay", "Krishna", role="aut"), person("Sowmini", "Varadhan", role="aut"), person("University of Tennessee Research Foundation", role = "cph", comment = "files src/las2.c, src/svdlib.[ch], src/svdutil.[ch]"), person("Stefan", "Evert", email="stefan.evert@fau.de", role=c("cre", "aut", "cph"), comment="copyright holder for files src/main.c, R/*, man/*, tests/*"))
+# Description: Wrapper around the 'SVDLIBC' library for (truncated) singular value decomposition of a sparse matrix. Currently, only sparse real matrices in Matrix package format are supported.
+# Depends: R (>= 3.0)
+# Imports: Matrix, methods
+# License: BSD_3_clause + file LICENSE
+# URL: http://tedlab.mit.edu/~dr/SVDLIBC/, http://wordspace.r-forge.r-project.org/
+# NeedsCompilation: yes
+# LazyData: true
+# Packaged: 2019-07-15 13:52:52 UTC; evert
+# Author: Doug Rohde [aut], Michael Berry [aut], Theresa Do [aut], Gavin O'Brien [aut], Vijay Krishna [aut], Sowmini Varadhan [aut], University of Tennessee Research Foundation [cph] (files src/las2.c, src/svdlib.[ch], src/svdutil.[ch]), Stefan Evert [cre, aut, cph] (copyright holder for files src/main.c, R/*, man/*, tests/*)
+# Maintainer: Stefan Evert <stefan.evert@fau.de>
+# Repository: CRAN
+# Date/Publication: 2019-07-15 15:10:03 UTC
