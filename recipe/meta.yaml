@@ -43,7 +43,7 @@ test:
 
 about:
   home: http://tedlab.mit.edu/~dr/SVDLIBC/, http://wordspace.r-forge.r-project.org/
-  license: BSD_3_clause
+  license: BSD-3-Clause
   summary: Wrapper around the 'SVDLIBC' library for (truncated) singular value decomposition
     of a sparse matrix. Currently, only sparse real matrices in Matrix package format
     are supported.
