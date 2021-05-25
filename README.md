@@ -3,7 +3,7 @@ About r-sparsesvd
 
 Home: http://tedlab.mit.edu/~dr/SVDLIBC/, http://wordspace.r-forge.r-project.org/
 
-Package license: BSD_3_clause
+Package license: BSD-3-Clause
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-sparsesvd-feedstock/blob/master/LICENSE.txt)
 
