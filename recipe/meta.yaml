@@ -1,4 +1,4 @@
-{% set version = '0.2' %}
+{% set version = "0.2-1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/sparsesvd_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/sparsesvd/sparsesvd_{{ version }}.tar.gz
-  sha256: 1a1f54d6b0dca6ae83e3f729a1895c91c58bfe55427dacc50ddb0d2c5d32a9f6
+  sha256: b3d03b4d6bfe19c4e108d0ef6e425aa66830190ba4e5b5cccf3ee6eed5abe07b
 
 build:
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -44,12 +44,10 @@ test:
 about:
   home: http://tedlab.mit.edu/~dr/SVDLIBC/, http://wordspace.r-forge.r-project.org/
   license: BSD-3-Clause
-  summary: Wrapper around the 'SVDLIBC' library for (truncated) singular value decomposition
-    of a sparse matrix. Currently, only sparse real matrices in Matrix package format
-    are supported.
+  summary: Wrapper around the 'SVDLIBC' library for (truncated) singular value decomposition of a sparse matrix. Currently, only sparse real matrices in Matrix package format are supported.
   license_family: BSD
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/BSD_3_clause'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/BSD_3_clause
     - LICENSE
 
 extra:
