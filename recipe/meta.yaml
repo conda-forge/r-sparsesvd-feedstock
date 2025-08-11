@@ -12,22 +12,28 @@ source:
   sha256: bb40cc69ee3aec28ff1418fd16cd76d953701a7b0d6bdcb0424c71793d96d836
 
 build:
-  number: 2
+  number: 3
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
-    - {{ compiler('c') }}              # [not win]
-    - {{ stdlib("c") }}                # [not win]
-    - {{ compiler('m2w64_c') }}        # [win]
-    - {{ stdlib("m2w64_c") }}          # [win]
-    - {{ posix }}filesystem        # [win]
+    - cross-r-base {{ r_base }}  # [build_platform != target_platform]
+    - r-matrix                   # [build_platform != target_platform]
+    - {{ compiler('c') }}        # [not win]
+    - {{ stdlib("c") }}          # [not win]
+    - {{ compiler('m2w64_c') }}  # [win]
+    - {{ stdlib("m2w64_c") }}    # [win]
+    - {{ posix }}filesystem      # [win]
     - {{ posix }}make
-    - {{ posix }}sed               # [win]
-    - {{ posix }}coreutils         # [win]
-    - {{ posix }}zip               # [win]
+    - {{ posix }}sed             # [win]
+    - {{ posix }}coreutils       # [win]
+    - {{ posix }}zip             # [win]
   host:
     - r-base
     - r-matrix
@@ -41,7 +47,8 @@ test:
     - "\"%R%\" -e \"library('sparsesvd')\""  # [win]
 
 about:
-  home: http://tedlab.mit.edu/~dr/SVDLIBC/, http://wordspace.r-forge.r-project.org/
+  home: http://wordspace.r-forge.r-project.org/
+  dev_url: https://github.com/lucasmaystre/svdlibc
   license: BSD-3-Clause
   summary: Wrapper around the 'SVDLIBC' library for (truncated) singular value decomposition of a sparse matrix. Currently, only sparse real matrices in Matrix package format are supported.
   license_family: BSD
@@ -52,21 +59,3 @@ about:
 extra:
   recipe-maintainers:
     - conda-forge/r
-
-# Package: sparsesvd
-# Title: Sparse Truncated Singular Value Decomposition (from 'SVDLIBC')
-# Version: 0.2
-# Date: 2019-07-15
-# Authors@R: c(person("Doug", "Rohde", email="dr+svd@tedlab.mit.edu", role="aut"), person("Michael", "Berry", role="aut"), person("Theresa", "Do", role="aut"), person("Gavin", "O'Brien", role="aut"), person("Vijay", "Krishna", role="aut"), person("Sowmini", "Varadhan", role="aut"), person("University of Tennessee Research Foundation", role = "cph", comment = "files src/las2.c, src/svdlib.[ch], src/svdutil.[ch]"), person("Stefan", "Evert", email="stefan.evert@fau.de", role=c("cre", "aut", "cph"), comment="copyright holder for files src/main.c, R/*, man/*, tests/*"))
-# Description: Wrapper around the 'SVDLIBC' library for (truncated) singular value decomposition of a sparse matrix. Currently, only sparse real matrices in Matrix package format are supported.
-# Depends: R (>= 3.0)
-# Imports: Matrix, methods
-# License: BSD_3_clause + file LICENSE
-# URL: http://tedlab.mit.edu/~dr/SVDLIBC/, http://wordspace.r-forge.r-project.org/
-# NeedsCompilation: yes
-# LazyData: true
-# Packaged: 2019-07-15 13:52:52 UTC; evert
-# Author: Doug Rohde [aut], Michael Berry [aut], Theresa Do [aut], Gavin O'Brien [aut], Vijay Krishna [aut], Sowmini Varadhan [aut], University of Tennessee Research Foundation [cph] (files src/las2.c, src/svdlib.[ch], src/svdutil.[ch]), Stefan Evert [cre, aut, cph] (copyright holder for files src/main.c, R/*, man/*, tests/*)
-# Maintainer: Stefan Evert <stefan.evert@fau.de>
-# Repository: CRAN
-# Date/Publication: 2019-07-15 15:10:03 UTC

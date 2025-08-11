@@ -7,33 +7,30 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-sparsesvd-fee
 About r-sparsesvd
 -----------------
 
-Home: http://tedlab.mit.edu/~dr/SVDLIBC/, http://wordspace.r-forge.r-project.org/
+Home: http://wordspace.r-forge.r-project.org/
 
 Package license: BSD-3-Clause
 
 Summary: Wrapper around the 'SVDLIBC' library for (truncated) singular value decomposition of a sparse matrix. Currently, only sparse real matrices in Matrix package format are supported.
+
+Development: https://github.com/lucasmaystre/svdlibc
 
 About r-sparsesvd
 -----------------
 
-Home: http://tedlab.mit.edu/~dr/SVDLIBC/, http://wordspace.r-forge.r-project.org/
+Home: http://wordspace.r-forge.r-project.org/
 
 Package license: BSD-3-Clause
 
 Summary: Wrapper around the 'SVDLIBC' library for (truncated) singular value decomposition of a sparse matrix. Currently, only sparse real matrices in Matrix package format are supported.
+
+Development: https://github.com/lucasmaystre/svdlibc
 
 Current build status
 ====================
 
 
-<table><tr>
-    <td>Travis</td>
-    <td>
-      <a href="https://app.travis-ci.com/conda-forge/r-sparsesvd-feedstock">
-        <img alt="linux" src="https://img.shields.io/travis/com/conda-forge/r-sparsesvd-feedstock/main.svg?label=Linux">
-      </a>
-    </td>
-  </tr>
+<table>
     
   <tr>
     <td>Azure</td>
@@ -100,6 +97,20 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1653&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-sparsesvd-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_r_base4.4" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_r_base4.3</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1653&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-sparsesvd-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_r_base4.3" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_arm64_r_base4.4</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1653&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-sparsesvd-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_r_base4.4" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -245,5 +256,5 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@conda-forge/r](https://github.com/conda-forge/r/)
+* [@conda-forge/r](https://github.com/orgs/conda-forge/teams/r/)
 
