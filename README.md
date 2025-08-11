@@ -7,20 +7,24 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-sparsesvd-fee
 About r-sparsesvd
 -----------------
 
-Home: http://tedlab.mit.edu/~dr/SVDLIBC/, http://wordspace.r-forge.r-project.org/
+Home: http://wordspace.r-forge.r-project.org/
 
 Package license: BSD-3-Clause
 
 Summary: Wrapper around the 'SVDLIBC' library for (truncated) singular value decomposition of a sparse matrix. Currently, only sparse real matrices in Matrix package format are supported.
+
+Development: https://github.com/lucasmaystre/svdlibc
 
 About r-sparsesvd
 -----------------
 
-Home: http://tedlab.mit.edu/~dr/SVDLIBC/, http://wordspace.r-forge.r-project.org/
+Home: http://wordspace.r-forge.r-project.org/
 
 Package license: BSD-3-Clause
 
 Summary: Wrapper around the 'SVDLIBC' library for (truncated) singular value decomposition of a sparse matrix. Currently, only sparse real matrices in Matrix package format are supported.
+
+Development: https://github.com/lucasmaystre/svdlibc
 
 Current build status
 ====================
