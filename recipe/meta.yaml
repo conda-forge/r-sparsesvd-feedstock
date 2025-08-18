@@ -1,4 +1,4 @@
-{% set version = "0.2-2" %}
+{% set version = "0.2-3" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/sparsesvd_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/sparsesvd/sparsesvd_{{ version }}.tar.gz
-  sha256: bb40cc69ee3aec28ff1418fd16cd76d953701a7b0d6bdcb0424c71793d96d836
+  sha256: 49f234fb3b31caabc1425e62d7ff88c57bd72e51eec1f6170a905d296c292363
 
 build:
-  number: 3
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
